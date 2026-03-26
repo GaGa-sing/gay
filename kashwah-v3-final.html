@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kashwah Eco Packaging — Compostable & Biodegradable Packaging Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    :root{
+      --cream:#FAF6EE;--sand:#EDE4D0;--sand2:#D9CCAF;--sand3:#C8B890;
+      --clay:#B08B5E;--clay2:#8A6A3F;--clay3:#F5EDE0;
+      --moss:#3D4D2A;--moss2:#566B38;--sage:#7E9A5A;--sage2:#EEF2E8;
+      --text:#2B2318;--muted:#7A6A54;--hint:#9E8C74;--light:#F4EFE4;
+    }
+    body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);}
+
+    /* ── NAV ── */
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4.5rem;background:var(--cream);border-bottom:1px solid var(--sand2);position:sticky;top:0;z-index:100;}
+    .logo-wrap{display:flex;flex-direction:column;line-height:1;}
+    .logo-main{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;letter-spacing:0.14em;color:var(--moss);text-transform:uppercase;}
+    .logo-sub{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clay);margin-top:3px;}
+    .nav-links{display:flex;gap:1.8rem;list-style:none;}
+    .nav-links a{text-decoration:none;font-size:0.7rem;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;color:var(--muted);transition:color .2s;white-space:nowrap;}
+    .nav-links a:hover{color:var(--moss);}
+    .nav-btn{font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:0.58rem 1.4rem;background:var(--moss);color:#fff;border:none;border-radius:1px;cursor:pointer;transition:background .2s;white-space:nowrap;}
+    .nav-btn:hover{background:var(--moss2);}
+
+    /* ── SHARED ── */
+    .sec-tag{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clay);margin-bottom:0.9rem;display:flex;align-items:center;gap:0.55rem;}
+    .sec-tag::before{content:'';display:inline-block;width:20px;height:1px;background:var(--clay);}
+    .sec-h{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.5rem;color:var(--moss);line-height:1.1;margin-bottom:3rem;}
+    .sec-sub{font-size:0.93rem;color:var(--muted);font-weight:300;line-height:1.78;margin-bottom:3rem;max-width:560px;}
+    .btn-p{font-family:'Jost',sans-serif;font-size:0.76rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:0.82rem 1.9rem;background:var(--moss);color:#fff;border:none;border-radius:1px;cursor:pointer;transition:background .2s;}
+    .btn-p:hover{background:var(--moss2);}
+    .btn-s{font-family:'Jost',sans-serif;font-size:0.76rem;font-weight:400;letter-spacing:0.1em;text-transform:uppercase;padding:0.82rem 1.7rem;background:transparent;color:var(--moss);border:1px solid var(--moss);border-radius:1px;cursor:pointer;transition:all .2s;}
+    .btn-s:hover{background:var(--sand);}
+
+    /* ── HERO ── */
+    .hero{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;}
+    .hero-left{padding:6rem 4rem 6rem 4.5rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--sand2);}
+    .hero-kicker{display:inline-flex;align-items:center;gap:0.55rem;font-size:0.66rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clay);margin-bottom:1.8rem;}
+    .hero-kicker::before{content:'';display:inline-block;width:22px;height:1px;background:var(--clay);}
+    .hero-h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.6rem,4vw,4.6rem);line-height:1.05;letter-spacing:-0.01em;color:var(--moss);margin-bottom:1.5rem;}
+    .hero-h1 em{font-style:italic;color:var(--clay);}
+    .hero-p{font-size:0.96rem;line-height:1.85;color:var(--muted);max-width:430px;margin-bottom:0.8rem;font-weight:300;}
+    .hero-p strong{font-weight:500;color:var(--text);}
+    .market-label{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--hint);margin-bottom:0.7rem;margin-top:1.8rem;}
+    .market-btns{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2.2rem;}
+    .mkt-btn{font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:400;letter-spacing:0.06em;padding:0.5rem 1.1rem;background:transparent;color:var(--moss);border:1px solid var(--sand2);border-radius:1px;cursor:pointer;transition:all .2s;}
+    .mkt-btn:hover,.mkt-btn.active{background:var(--moss);color:#fff;border-color:var(--moss);}
+    .hero-actions{display:flex;gap:0.9rem;}
+    .hero-right{background:var(--sand);display:flex;flex-direction:column;justify-content:center;padding:3.5rem;position:relative;overflow:hidden;}
+    .hero-right::before{content:'';position:absolute;top:-70px;right:-70px;width:280px;height:280px;border-radius:50%;background:var(--sand2);opacity:0.45;}
+    .pain-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--clay);margin-bottom:1.2rem;position:relative;z-index:1;display:flex;align-items:center;gap:0.5rem;}
+    .pain-label::before{content:'';display:inline-block;width:14px;height:1px;background:var(--clay);}
+    .pain-items{display:flex;flex-direction:column;gap:2px;position:relative;z-index:1;}
+    .pain-item{background:var(--cream);padding:1.15rem 1.4rem;display:flex;align-items:flex-start;gap:1rem;transition:background .2s;}
+    .pain-item:hover{background:#fff;}
+    .pain-num{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--sand2);line-height:1;flex-shrink:0;width:24px;}
+    .pain-q{font-size:0.83rem;font-weight:500;color:var(--text);margin-bottom:0.2rem;}
+    .pain-a{font-size:0.74rem;color:var(--muted);line-height:1.55;font-weight:300;}
+    .pain-a strong{color:var(--moss);font-weight:500;}
+
+    /* ── QUICK ENTRY ── */
+    .quick{background:var(--moss);padding:2.2rem 4.5rem;}
+    .quick-inner{display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:2rem;align-items:center;}
+    .quick-label{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.4);white-space:nowrap;}
+    .quick-group{display:flex;flex-direction:column;gap:0.5rem;}
+    .quick-group-label{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+    .quick-btns{display:flex;gap:0.4rem;flex-wrap:wrap;}
+    .q-btn{font-family:'Jost',sans-serif;font-size:0.68rem;font-weight:400;letter-spacing:0.05em;padding:0.32rem 0.75rem;background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.12);border-radius:1px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .q-btn:hover{background:rgba(255,255,255,0.14);color:#fff;border-color:rgba(255,255,255,0.3);}
+
+    /* ── PRODUCT OVERVIEW ── */
+    .overview{background:var(--cream);padding:6.5rem 4.5rem;}
+    .overview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--sand2);}
+    .ov-card{background:var(--light);display:flex;flex-direction:column;transition:background .2s;}
+    .ov-card:hover{background:#fff;}
+    .ov-head{padding:2rem 1.8rem 1.5rem;border-bottom:1px solid var(--sand2);}
+    .ov-icon{margin-bottom:1.3rem;}
+    .ov-cat{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--clay);margin-bottom:0.5rem;}
+    .ov-name{font-family:'Cormorant Garamond',serif;font-size:1.42rem;font-weight:300;color:var(--moss);margin-bottom:0.45rem;}
+    .ov-desc{font-size:0.8rem;line-height:1.68;color:var(--muted);font-weight:300;}
+    .ov-specs{padding:1.3rem 1.8rem;display:flex;flex-direction:column;gap:0.45rem;flex:1;}
+    .ov-spec{display:flex;justify-content:space-between;align-items:baseline;font-size:0.74rem;border-bottom:1px solid var(--sand);padding-bottom:0.4rem;gap:0.5rem;}
+    .ov-spec:last-of-type{border-bottom:none;}
+    .ov-spec-k{color:var(--hint);font-weight:300;flex-shrink:0;}
+    .ov-spec-v{color:var(--text);font-weight:400;text-align:right;}
+    .ov-certs{padding:1rem 1.8rem;border-top:1px solid var(--sand2);display:flex;flex-wrap:wrap;gap:0.38rem;}
+    .ov-cert{font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--clay2);border:1px solid var(--clay);padding:0.18rem 0.5rem;border-radius:1px;}
+
+    /* ── SOLUTIONS ── */
+    .solutions{background:var(--sand);padding:6.5rem 4.5rem;}
+    .sol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--sand3);}
+    .sol-card{background:var(--cream);padding:2.4rem 2.2rem;transition:background .2s;}
+    .sol-card:hover{background:#fff;}
+    .sol-sector{font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--clay);margin-bottom:0.9rem;display:flex;align-items:center;gap:0.45rem;}
+    .sol-sector::before{content:'';display:inline-block;width:10px;height:1px;background:var(--clay);}
+    .sol-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;color:var(--moss);margin-bottom:0.7rem;line-height:1.15;}
+    .sol-desc{font-size:0.81rem;line-height:1.72;color:var(--muted);margin-bottom:1.3rem;font-weight:300;}
+    .sol-items{display:flex;flex-direction:column;gap:0.42rem;margin-bottom:1.4rem;}
+    .sol-item{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.79rem;color:var(--text);}
+    .sol-item::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--sage);flex-shrink:0;margin-top:0.38rem;}
+    .sol-tags{display:flex;gap:0.4rem;flex-wrap:wrap;}
+    .sol-tag{font-size:0.62rem;letter-spacing:0.07em;padding:0.22rem 0.6rem;background:var(--sage2);color:var(--moss);border-radius:1px;}
+
+    /* ── MARKETS ── */
+    .markets{background:var(--moss);padding:6rem 4.5rem;}
+    .markets-inner{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;}
+    .markets-left .sec-tag{color:var(--sage);}
+    .markets-left .sec-tag::before{background:var(--sage);}
+    .markets-left .sec-h{color:#fff;margin-bottom:1rem;}
+    .markets-left p{font-size:0.88rem;line-height:1.8;color:rgba(255,255,255,0.48);font-weight:300;}
+    .market-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:rgba(255,255,255,0.1);}
+    .market-card{background:rgba(255,255,255,0.05);padding:1.8rem 1.6rem;transition:background .2s;}
+    .market-card:hover{background:rgba(255,255,255,0.09);}
+    .mc-flag{font-size:1.5rem;margin-bottom:0.9rem;}
+    .mc-region{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:#fff;margin-bottom:0.4rem;}
+    .mc-cert{font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--sage);margin-bottom:0.7rem;}
+    .mc-desc{font-size:0.76rem;line-height:1.62;color:rgba(255,255,255,0.42);font-weight:300;margin-bottom:0.9rem;}
+    .mc-recs{display:flex;flex-direction:column;gap:0.3rem;}
+    .mc-rec{font-size:0.7rem;color:rgba(255,255,255,0.55);display:flex;align-items:flex-start;gap:0.5rem;}
+    .mc-rec::before{content:'→';color:var(--sage);flex-shrink:0;}
+    .mc-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:0.8rem;}
+    .mc-tag{font-size:0.58rem;letter-spacing:0.06em;padding:0.18rem 0.5rem;border:1px solid rgba(255,255,255,0.13);color:rgba(255,255,255,0.4);border-radius:1px;}
+
+    /* ── CERTS ── */
+    .certs-section{background:var(--light);padding:6.5rem 4.5rem;}
+    .certs-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+    .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:var(--sand2);}
+    .cert-item{background:var(--cream);padding:1.5rem;transition:background .2s;}
+    .cert-item:hover{background:#fff;}
+    .cert-code{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;color:var(--moss);margin-bottom:0.28rem;}
+    .cert-region{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--clay);margin-bottom:0.38rem;}
+    .cert-desc{font-size:0.74rem;line-height:1.58;color:var(--muted);font-weight:300;}
+    .data-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--sand2);margin-top:1.5px;}
+    .data-item{background:var(--cream);padding:1.3rem 1.5rem;}
+    .data-n{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--moss);}
+    .data-l{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--clay);margin-top:0.28rem;}
+    .cert-verify{background:var(--sand);border:1px solid var(--sand2);padding:1.8rem;margin-top:1.5px;}
+    .cv-title{font-size:0.83rem;font-weight:500;color:var(--moss);margin-bottom:0.45rem;display:flex;align-items:center;gap:0.55rem;}
+    .cv-title::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--sage);}
+    .cv-desc{font-size:0.77rem;line-height:1.68;color:var(--muted);font-weight:300;margin-bottom:1.1rem;}
+    .cv-links{display:flex;flex-direction:column;gap:0.4rem;}
+    .cv-link{display:flex;align-items:center;justify-content:space-between;background:var(--cream);padding:0.7rem 0.95rem;border:1px solid var(--sand2);transition:border-color .2s;cursor:pointer;}
+    .cv-link:hover{border-color:var(--moss);}
+    .cv-link-cert{font-size:0.78rem;font-weight:500;color:var(--moss);}
+    .cv-link-body{font-size:0.7rem;color:var(--muted);font-weight:300;margin-top:0.1rem;}
+    .cv-arrow{font-size:0.76rem;color:var(--clay);}
+    .cv-note{font-size:0.7rem;color:var(--hint);margin-top:0.7rem;line-height:1.55;font-style:italic;}
+
+    /* standards explained */
+    .std-right{}
+    .std-block{margin-bottom:2rem;}
+    .std-block-title{font-size:0.85rem;font-weight:500;color:var(--moss);margin-bottom:0.8rem;padding-bottom:0.5rem;border-bottom:1px solid var(--sand2);}
+    .std-rows{display:flex;flex-direction:column;gap:1.5px;background:var(--sand2);}
+    .std-row{background:var(--cream);padding:1rem 1.3rem;display:flex;gap:1rem;align-items:baseline;}
+    .std-row-k{font-size:0.72rem;font-weight:500;color:var(--moss);min-width:110px;flex-shrink:0;}
+    .std-row-v{font-size:0.74rem;color:var(--muted);font-weight:300;line-height:1.58;}
+
+    /* ── CASES ── */
+    .cases{background:var(--sand);padding:6.5rem 4.5rem;}
+    .cases-grid{display:flex;flex-direction:column;gap:2px;background:var(--sand2);}
+    .case-card{background:var(--cream);display:grid;grid-template-columns:240px 1fr;transition:background .2s;}
+    .case-card:hover{background:#fff;}
+    .case-left{padding:2.4rem 2rem;border-right:1px solid var(--sand2);display:flex;flex-direction:column;justify-content:space-between;}
+    .case-client-tag{font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--clay);margin-bottom:0.7rem;}
+    .case-client{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--moss);line-height:1.18;margin-bottom:0.45rem;}
+    .case-cat{font-size:0.7rem;color:var(--muted);font-weight:300;}
+    .case-badge{display:inline-block;margin-top:1.4rem;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;background:var(--sage2);color:var(--moss);padding:0.25rem 0.65rem;border-radius:1px;}
+    .case-right{padding:2.4rem 2.6rem;}
+    .case-sl{font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--hint);margin-bottom:0.55rem;}
+    .case-quote{font-size:0.83rem;line-height:1.72;color:var(--muted);font-weight:300;font-style:italic;padding-left:0.9rem;border-left:2px solid var(--sand2);margin-bottom:1.5rem;}
+    .case-steps{display:flex;flex-direction:column;gap:0.45rem;margin-bottom:1.6rem;}
+    .case-step{display:flex;align-items:flex-start;gap:0.9rem;}
+    .case-step-n{font-family:'Cormorant Garamond',serif;font-size:0.92rem;color:var(--sand3);flex-shrink:0;width:18px;line-height:1.6;}
+    .case-step-t{font-size:0.8rem;line-height:1.62;color:var(--text);font-weight:300;}
+    .case-step-t strong{font-weight:500;color:var(--moss);}
+    .case-results{display:flex;flex-wrap:wrap;gap:0.4rem;}
+    .case-r{font-size:0.7rem;font-weight:500;color:var(--moss);background:var(--sage2);padding:0.28rem 0.75rem;border-radius:1px;}
+
+    /* ── PROCESS ── */
+    .process{background:var(--cream);padding:6.5rem 4.5rem;}
+    .process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5px;background:var(--sand2);}
+    .step{background:var(--cream);padding:1.8rem 1.5rem;transition:background .2s;}
+    .step:hover{background:var(--light);}
+    .step-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--sand2);line-height:1;margin-bottom:1rem;}
+    .step-title{font-size:0.85rem;font-weight:500;color:var(--moss);margin-bottom:0.45rem;}
+    .step-desc{font-size:0.76rem;line-height:1.62;color:var(--muted);font-weight:300;margin-bottom:0.75rem;}
+    .step-time{font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--clay);background:var(--clay3);padding:0.18rem 0.55rem;border-radius:1px;display:inline-block;}
+
+    /* ── DESIGN ── */
+    .design{background:var(--light);display:grid;grid-template-columns:1fr 1fr;min-height:70vh;}
+    .design-left{padding:5.5rem 4rem 5.5rem 4.5rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--sand2);}
+    .design-left .sec-h{margin-bottom:1rem;}
+    .design-intro{font-size:0.93rem;line-height:1.85;color:var(--muted);font-weight:300;margin-bottom:2.2rem;}
+    .design-feats{display:flex;flex-direction:column;gap:1px;background:var(--sand2);}
+    .design-feat{background:var(--light);padding:1.1rem 1.3rem;display:flex;gap:0.9rem;align-items:flex-start;transition:background .2s;}
+    .design-feat:hover{background:var(--cream);}
+    .df-icon{width:30px;height:30px;background:var(--sage2);border-radius:1px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .df-title{font-size:0.83rem;font-weight:500;color:var(--text);margin-bottom:0.18rem;}
+    .df-desc{font-size:0.76rem;color:var(--muted);font-weight:300;line-height:1.55;}
+    .design-right{background:var(--sand);padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center;}
+    .form-label{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--clay);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.5rem;}
+    .form-label::before{content:'';display:inline-block;width:14px;height:1px;background:var(--clay);}
+    .form{display:flex;flex-direction:column;gap:1.1rem;}
+    .f-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;}
+    .f-field label{display:block;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--hint);margin-bottom:0.4rem;}
+    .f-field input,.f-field select,.f-field textarea{width:100%;padding:0.7rem 0.85rem;background:var(--cream);border:1px solid var(--sand2);border-radius:1px;font-family:'Jost',sans-serif;font-size:0.84rem;color:var(--text);font-weight:300;outline:none;transition:border-color .2s;appearance:none;}
+    .f-field input:focus,.f-field select:focus,.f-field textarea:focus{border-color:var(--moss);}
+    .f-field textarea{resize:vertical;min-height:78px;}
+    .f-radio-group{display:flex;flex-direction:column;gap:0.4rem;}
+    .f-radio{display:flex;align-items:center;gap:0.55rem;font-size:0.8rem;color:var(--muted);cursor:pointer;font-weight:300;}
+    .f-radio input{width:14px;height:14px;accent-color:var(--moss);cursor:pointer;}
+    .f-submit{padding:0.86rem;background:var(--moss);color:#fff;border:none;border-radius:1px;font-family:'Jost',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+    .f-submit:hover{background:var(--moss2);}
+    .f-note{font-size:0.7rem;color:var(--hint);text-align:center;margin-top:0.4rem;}
+
+    /* ── ABOUT ── */
+    .about{background:var(--cream);padding:6.5rem 4.5rem;}
+    .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+    .about-left .sec-h{margin-bottom:1rem;}
+    .about-body{font-size:0.9rem;line-height:1.88;color:var(--muted);font-weight:300;}
+    .about-body p+p{margin-top:0.9rem;}
+    .about-vals{margin-top:2.2rem;display:flex;flex-direction:column;gap:1px;background:var(--sand2);}
+    .av-row{background:var(--cream);padding:1.1rem 1.3rem;display:flex;align-items:baseline;gap:1.1rem;transition:background .2s;}
+    .av-row:hover{background:var(--light);}
+    .av-num{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--sand2);}
+    .av-title{font-size:0.83rem;font-weight:500;color:var(--text);}
+    .av-sub{font-size:0.76rem;color:var(--muted);font-weight:300;margin-top:0.1rem;}
+    .about-right{display:flex;flex-direction:column;gap:1.5px;background:var(--sand2);}
+    .about-pillar{background:var(--light);padding:1.6rem 1.8rem;transition:background .2s;}
+    .about-pillar:hover{background:var(--cream);}
+    .ap-title{font-size:0.88rem;font-weight:500;color:var(--moss);margin-bottom:0.4rem;}
+    .ap-desc{font-size:0.8rem;line-height:1.65;color:var(--muted);font-weight:300;}
+
+    /* ── RESOURCES ── */
+    .resources{background:var(--sand);padding:6.5rem 4.5rem;}
+    .resources-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+    .articles-grid{display:flex;flex-direction:column;gap:1.5px;background:var(--sand2);}
+    .article-item{background:var(--cream);padding:1.5rem 1.8rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;transition:background .2s;cursor:pointer;}
+    .article-item:hover{background:#fff;}
+    .art-tag{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--clay);margin-bottom:0.45rem;}
+    .art-title{font-size:0.88rem;font-weight:500;color:var(--moss);line-height:1.4;}
+    .art-arrow{color:var(--clay);font-size:0.9rem;flex-shrink:0;margin-top:0.2rem;}
+    .downloads-grid{display:flex;flex-direction:column;gap:1.5px;background:var(--sand2);}
+    .dl-item{background:var(--cream);padding:1.4rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background .2s;cursor:pointer;}
+    .dl-item:hover{background:#fff;}
+    .dl-icon{width:34px;height:34px;background:var(--sage2);border-radius:1px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .dl-name{font-size:0.85rem;font-weight:500;color:var(--moss);}
+    .dl-desc{font-size:0.73rem;color:var(--muted);font-weight:300;margin-top:0.15rem;}
+    .dl-btn{font-size:0.68rem;font-weight:500;color:var(--moss);letter-spacing:0.06em;text-transform:uppercase;border:1px solid var(--moss);padding:0.28rem 0.7rem;border-radius:1px;white-space:nowrap;}
+
+    /* ── CTA ── */
+    .cta{background:var(--moss);padding:5rem 4.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+    .cta-left .sec-tag{color:var(--sage);}
+    .cta-left .sec-tag::before{background:var(--sage);}
+    .cta-h{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:2.3rem;color:#fff;line-height:1.1;margin-bottom:0.9rem;}
+    .cta-sub{font-size:0.9rem;color:rgba(255,255,255,0.52);line-height:1.8;font-weight:300;}
+    .cta-opts{display:flex;flex-direction:column;gap:1.5px;background:rgba(255,255,255,0.08);}
+    .cta-opt{background:rgba(255,255,255,0.04);padding:1.5rem 1.8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:background .2s;cursor:pointer;}
+    .cta-opt:hover{background:rgba(255,255,255,0.09);}
+    .cta-opt-label{font-size:0.86rem;font-weight:500;color:#fff;margin-bottom:0.18rem;}
+    .cta-opt-desc{font-size:0.73rem;color:rgba(255,255,255,0.42);font-weight:300;}
+    .cta-arrow{font-size:1rem;color:var(--sage);flex-shrink:0;}
+
+    /* ── FOOTER ── */
+    footer{background:var(--moss);border-top:1px solid rgba(255,255,255,0.08);padding:2.2rem 4.5rem;display:flex;align-items:center;justify-content:space-between;}
+    footer .logo-main{color:#fff;}
+    footer .logo-sub{color:rgba(255,255,255,0.32);}
+    .footer-mid{display:flex;gap:1.6rem;flex-wrap:wrap;}
+    .footer-mid a{text-decoration:none;font-size:0.68rem;letter-spacing:0.07em;text-transform:uppercase;color:rgba(255,255,255,0.35);transition:color .2s;}
+    .footer-mid a:hover{color:rgba(255,255,255,0.82);}
+    .footer-right{font-size:0.68rem;color:rgba(255,255,255,0.22);letter-spacing:0.05em;}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1100px){
+      nav{padding:1.1rem 2.5rem;}
+      .nav-links{gap:1.2rem;}
+      .hero,.design{grid-template-columns:1fr;}
+      .hero-left,.design-left{padding:4rem 2.5rem;border-right:none;border-bottom:1px solid var(--sand2);}
+      .hero-right,.design-right{padding:3rem 2.5rem;}
+      .hero-right::before{display:none;}
+      .quick{padding:2rem 2.5rem;}
+      .quick-inner{grid-template-columns:1fr 1fr;gap:1.5rem;}
+      .overview,.solutions,.certs-section,.cases,.process,.about,.resources{padding:5rem 2.5rem;}
+      .markets{padding:5rem 2.5rem;}
+      .markets-inner{grid-template-columns:1fr;gap:2.5rem;}
+      .market-cards{grid-template-columns:1fr 1fr;}
+      .overview-grid,.sol-grid{grid-template-columns:1fr;}
+      .certs-inner,.about-inner,.resources-inner{grid-template-columns:1fr;gap:3rem;}
+      .cert-grid{grid-template-columns:1fr 1fr;}
+      .process-steps{grid-template-columns:1fr 1fr;}
+      .case-card{grid-template-columns:1fr;}
+      .case-left{border-right:none;border-bottom:1px solid var(--sand2);}
+      .cta{grid-template-columns:1fr;gap:3rem;padding:4rem 2.5rem;}
+      footer{padding:2rem 2.5rem;flex-direction:column;gap:1.2rem;text-align:center;}
+    }
+    @media(max-width:640px){
+      nav{padding:1rem 1.5rem;}
+      .nav-links{display:none;}
+      .hero-left{padding:3rem 1.5rem;}
+      .hero-h1{font-size:2.5rem;}
+      .quick-inner{grid-template-columns:1fr;}
+      .market-cards{grid-template-columns:1fr;}
+      .cert-grid{grid-template-columns:1fr;}
+      .data-strip{grid-template-columns:1fr;}
+      .process-steps{grid-template-columns:1fr;}
+      .f-row{grid-template-columns:1fr;}
+      .overview,.solutions,.certs-section,.cases,.process,.about,.resources,.design-left,.design-right{padding:3rem 1.5rem;}
+      .markets{padding:3rem 1.5rem;}
+      .cta{padding:3rem 1.5rem;}
+      footer{padding:2rem 1.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="logo-wrap">
+    <span class="logo-main">Kashwah</span>
+    <span class="logo-sub">Eco Packaging</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#markets">By Region</a></li>
+    <li><a href="#certs">Certifications</a></li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+  <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <span class="hero-kicker">One-Stop Compostable & Biodegradable Packaging</span>
+    <h1 class="hero-h1">你的市场<br>需要什么，<br>我们<em>帮你搞定。</em></h1>
+    <p class="hero-p">One-Stop Compostable & Biodegradable Packaging Solutions for EU, US & Australia. 从认证合规到定制设计，Kashwah 解决的不是"卖给你什么包装"——而是<strong>帮你达成目标</strong>。</p>
+    <div class="market-label">Your target market /  你的目标市场</div>
+    <div class="market-btns">
+      <button class="mkt-btn active" onclick="setMarket(this)">🇪🇺 Europe / EU</button>
+      <button class="mkt-btn" onclick="setMarket(this)">🇺🇸 North America</button>
+      <button class="mkt-btn" onclick="setMarket(this)">🇦🇺 Australia & NZ</button>
+      <button class="mkt-btn" onclick="setMarket(this)">🇬🇧 UK</button>
+    </div>
+    <div class="hero-actions">
+      <button class="btn-p" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">View Products</button>
+      <button class="btn-s" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Free Sample</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="pain-label">客户真正在想的问题</div>
+    <div class="pain-items">
+      <div class="pain-item">
+        <div class="pain-num">1</div>
+        <div class="pain-content">
+          <div class="pain-q">这个产品符合我国家的法规吗？</div>
+          <div class="pain-a">我们按市场分类，<strong>EN 13432 / ASTM D6400 / AS 4736</strong>，直接对应你需要的认证。</div>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">2</div>
+        <div class="pain-content">
+          <div class="pain-q">你提供的证书，真的能查到吗？</div>
+          <div class="pain-a">每张证书附<strong>官方验证链接</strong>，可直接在 TÜV / BPI / DIN CERTCO 官网核查，不是自印的纸。</div>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">3</div>
+        <div class="pain-content">
+          <div class="pain-q">交期能保证吗？出了问题怎么办？</div>
+          <div class="pain-a">打样 <strong>7 天</strong>，量产 <strong>21–28 天</strong>，每个节点透明，附质检报告，质量问题我们兜底。</div>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">4</div>
+        <div class="pain-content">
+          <div class="pain-q">我不懂设计，怎么把想法变成包装？</div>
+          <div class="pain-a">告诉我们产品和品牌感觉，<strong>我们出初稿</strong>，你确认方向，最多 3 轮修改，不额外收费。</div>
+        </div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-num">5</div>
+        <div class="pain-content">
+          <div class="pain-q">换成可堆肥包装，成本会涨多少？</div>
+          <div class="pain-a">我们提供<strong>阶梯报价对比表</strong>，不同数量下的单价一目了然，帮你做决策，不让你盲猜。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── QUICK ENTRY ── -->
+<div class="quick">
+  <div class="quick-inner">
+    <div class="quick-label">快速入口</div>
+    <div class="quick-group">
+      <div class="quick-group-label">By Scenario / 按场景</div>
+      <div class="quick-btns">
+        <button class="q-btn" onclick="document.getElementById('solutions').scrollIntoView({behavior:'smooth'})">Food Service</button>
+        <button class="q-btn" onclick="document.getElementById('solutions').scrollIntoView({behavior:'smooth'})">Retail</button>
+        <button class="q-btn" onclick="document.getElementById('solutions').scrollIntoView({behavior:'smooth'})">E-commerce</button>
+        <button class="q-btn" onclick="document.getElementById('solutions').scrollIntoView({behavior:'smooth'})">Waste Management</button>
+      </div>
+    </div>
+    <div class="quick-group">
+      <div class="quick-group-label">By Region / 按地区</div>
+      <div class="quick-btns">
+        <button class="q-btn" onclick="document.getElementById('markets').scrollIntoView({behavior:'smooth'})">🇪🇺 Europe</button>
+        <button class="q-btn" onclick="document.getElementById('markets').scrollIntoView({behavior:'smooth'})">🇺🇸 North America</button>
+        <button class="q-btn" onclick="document.getElementById('markets').scrollIntoView({behavior:'smooth'})">🇦🇺 Australia & NZ</button>
+      </div>
+    </div>
+    <div class="quick-group">
+      <div class="quick-group-label">By Product / 按产品</div>
+      <div class="quick-btns">
+        <button class="q-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Tableware</button>
+        <button class="q-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Bags & Mailers</button>
+        <button class="q-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Cutlery</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PRODUCTS ── -->
+<section class="overview" id="products">
+  <div class="sec-tag">Products / 产品总览</div>
+  <h2 class="sec-h">五大产品品类，<br>一眼看清。</h2>
+  <p class="sec-sub">从纸浆模塑餐具到 PLA/PBAT 可堆肥袋与餐具，覆盖餐饮、零售、电商全场景。快速扫一下核心规格，找到最接近你需求的品类。</p>
+  <div class="overview-grid" style="grid-template-columns:repeat(3,1fr);">
+    <!-- P1 -->
+    <div class="ov-card">
+      <div class="ov-head">
+        <div class="ov-icon">
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect x="4" y="14" width="34" height="21" rx="3" fill="#C4B49A"/><rect x="4" y="14" width="34" height="8" rx="3" fill="#A8946E"/><rect x="10" y="7" width="22" height="9" rx="3" fill="#BFB095"/><ellipse cx="15" cy="27" rx="4" ry="5" fill="#9A845E"/><ellipse cx="21" cy="27" rx="4" ry="5" fill="#9A845E"/><ellipse cx="27" cy="27" rx="4" ry="5" fill="#9A845E"/></svg>
+        </div>
+        <div class="ov-cat">餐盒 · 碗 · 盘 · 托盘</div>
+        <div class="ov-name">Molded Fiber Tableware</div>
+        <div class="ov-desc">纸浆模塑餐具与托盘，甘蔗浆 / 竹浆基底，无塑或可堆肥涂层，适配欧盟 SUP 指令与外卖堂食场景。</div>
+      </div>
+      <div class="ov-specs">
+        <div class="ov-spec"><span class="ov-spec-k">原料</span><span class="ov-spec-v">甘蔗浆 / 竹浆 / 麦秸</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">防油防水</span><span class="ov-spec-v">植物蜡涂层（无 PE）</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">最小起订</span><span class="ov-spec-v">打样 100 件起</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">交期</span><span class="ov-spec-v">打样 7 天 · 量产 21 天</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">适用</span><span class="ov-spec-v">餐厅 · 外卖 · 超市熟食</span></div>
+      </div>
+      <div class="ov-certs"><span class="ov-cert">EN 13432</span><span class="ov-cert">OK Compost</span><span class="ov-cert">ISO 14001</span></div>
+    </div>
+    <!-- P2 -->
+    <div class="ov-card">
+      <div class="ov-head">
+        <div class="ov-icon">
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect x="6" y="17" width="6" height="18" rx="3" fill="#C4B49A"/><rect x="5" y="15" width="8" height="10" rx="2" fill="#A8946E"/><rect x="5" y="15" width="2.5" height="8" rx="1" fill="#8A6A3F"/><rect x="8.5" y="15" width="2.5" height="8" rx="1" fill="#8A6A3F"/><rect x="18" y="17" width="6" height="18" rx="3" fill="#C4B49A"/><rect x="30" y="17" width="6" height="18" rx="3" fill="#C4B49A"/><ellipse cx="33" cy="17" rx="4" ry="5" fill="#BFB095"/></svg>
+        </div>
+        <div class="ov-cat">刀 · 叉 · 勺 · 搅拌棒 · 吸管</div>
+        <div class="ov-name">Compostable Cutlery & Straws</div>
+        <div class="ov-desc">PLA、CPLA 或植物纤维餐具，可与餐盒配套出货，满足餐饮与外卖禁塑合规要求。</div>
+      </div>
+      <div class="ov-specs">
+        <div class="ov-spec"><span class="ov-spec-k">原料</span><span class="ov-spec-v">PLA / CPLA / 植物纤维</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">耐热</span><span class="ov-spec-v">90°C（CPLA 可达 110°C）</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">最小起订</span><span class="ov-spec-v">5,000 套起</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">交期</span><span class="ov-spec-v">打样 7 天 · 量产 21 天</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">适用</span><span class="ov-spec-v">餐饮 · 外卖 · 航空配餐</span></div>
+      </div>
+      <div class="ov-certs"><span class="ov-cert">EN 13432</span><span class="ov-cert">OK Compost</span><span class="ov-cert">AS 4736</span></div>
+    </div>
+    <!-- P3 -->
+    <div class="ov-card">
+      <div class="ov-head">
+        <div class="ov-icon">
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><path d="M12 8 L30 8 L34 36 L8 36Z" fill="#C4B49A"/><path d="M12 8 L30 8 L32 19 L10 19Z" fill="#A8946E"/><rect x="16" y="13" width="10" height="2" rx="1" fill="#FAF6EE" opacity="0.5"/></svg>
+        </div>
+        <div class="ov-cat">购物袋 · 邮袋 · 垃圾袋 · 果蔬袋</div>
+        <div class="ov-name">Compostable Bags & Mailers</div>
+        <div class="ov-desc">PLA/PBAT 或淀粉基配方，透明 / 磨砂 / 印刷多种形态，覆盖零售、电商邮袋与厨余收集袋全场景。</div>
+      </div>
+      <div class="ov-specs">
+        <div class="ov-spec"><span class="ov-spec-k">原料</span><span class="ov-spec-v">PLA + PBAT / 淀粉基</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">形态</span><span class="ov-spec-v">透明 · 磨砂 · 彩印</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">最小起订</span><span class="ov-spec-v">2,000 件起</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">交期</span><span class="ov-spec-v">打样 5 天 · 量产 18 天</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">适用</span><span class="ov-spec-v">电商 · 服装 · 生鲜 · 厨余</span></div>
+      </div>
+      <div class="ov-certs"><span class="ov-cert">EN 13432</span><span class="ov-cert">ASTM D6400</span><span class="ov-cert">BPI</span></div>
+    </div>
+  </div>
+  <!-- Row 2 -->
+  <div class="overview-grid" style="grid-template-columns:repeat(2,1fr);margin-top:2px;">
+    <!-- P4 -->
+    <div class="ov-card">
+      <div class="ov-head">
+        <div class="ov-icon">
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect x="6" y="20" width="30" height="14" rx="8" fill="#C4B49A"/><ellipse cx="21" cy="20" rx="15" ry="5" fill="#A8946E"/><rect x="14" y="8" width="14" height="13" rx="3" fill="#BFB095"/></svg>
+        </div>
+        <div class="ov-cat">纸杯 · 汤杯 · 带盖容器</div>
+        <div class="ov-name">Cups, Lids & Food Containers</div>
+        <div class="ov-desc">纸基 + 可堆肥涂层，或全 PLA 材质，适配咖啡店、饮品店与外卖热食场景，杯盖与容器可配套。</div>
+      </div>
+      <div class="ov-specs">
+        <div class="ov-spec"><span class="ov-spec-k">原料</span><span class="ov-spec-v">纸基 + 可堆肥涂层 / PLA</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">耐热</span><span class="ov-spec-v">最高 100°C（视规格）</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">最小起订</span><span class="ov-spec-v">5,000 只起</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">定制</span><span class="ov-spec-v">尺寸 · 品牌印刷 · 杯盖配套</span></div>
+      </div>
+      <div class="ov-certs"><span class="ov-cert">EN 13432</span><span class="ov-cert">OK Compost</span><span class="ov-cert">BPI</span></div>
+    </div>
+    <!-- P5 -->
+    <div class="ov-card">
+      <div class="ov-head">
+        <div class="ov-icon">
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none"><rect x="6" y="10" width="30" height="24" rx="3" fill="#C4B49A"/><rect x="6" y="10" width="30" height="8" rx="3" fill="#A8946E"/><rect x="12" y="24" width="18" height="2" rx="1" fill="#9A845E" opacity="0.5"/><rect x="12" y="28" width="12" height="2" rx="1" fill="#9A845E" opacity="0.4"/></svg>
+        </div>
+        <div class="ov-cat">定制形状 · 品牌印刷 · OEM/ODM</div>
+        <div class="ov-name">Custom Packaging & OEM</div>
+        <div class="ov-desc">整合多家认证工厂，提供完整 OEM/ODM 服务。从产品形状定制、品牌印刷到区域合规认证规划，一张方案表对接全部需求。</div>
+      </div>
+      <div class="ov-specs">
+        <div class="ov-spec"><span class="ov-spec-k">服务</span><span class="ov-spec-v">形状定制 · 图案印刷 · 合规规划</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">工厂整合</span><span class="ov-spec-v">纸塑模具 · 餐具 · PLA/PBAT 袋</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">交期</span><span class="ov-spec-v">视产品类型，含认证规划周期</span></div>
+        <div class="ov-spec"><span class="ov-spec-k">起步</span><span class="ov-spec-v">无图纸亦可，描述需求即启动</span></div>
+      </div>
+      <div class="ov-certs"><span class="ov-cert">多市场认证</span><span class="ov-cert">设计协作</span><span class="ov-cert">一站式</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOLUTIONS ── -->
+<section class="solutions" id="solutions">
+  <div class="sec-tag">Solutions / 解决方案</div>
+  <h2 class="sec-h">四大行业方案，<br>按场景选。</h2>
+  <p class="sec-sub">We design complete compostable & biodegradable packaging solutions tailored to different industries and regions. 我们为不同行业设计完整的一体化方案。</p>
+  <div class="sol-grid">
+    <div class="sol-card">
+      <div class="sol-sector">Food Service & Takeaway</div>
+      <div class="sol-title">餐饮与外卖<br>包装方案</div>
+      <div class="sol-desc">餐厅、咖啡馆、外卖平台、快餐连锁——从堂食到外卖的一站式可堆肥包装组合，对接 SUPD / BPI / 澳洲各州禁塑要求。</div>
+      <div class="sol-items">
+        <div class="sol-item">Molded fiber food containers（纸浆模塑餐盒）</div>
+        <div class="sol-item">Compostable cutlery & straws（可堆肥餐具与吸管）</div>
+        <div class="sol-item">Compostable takeaway bags（外卖袋 / 打包袋）</div>
+        <div class="sol-item">Cups & lids（杯子与杯盖）</div>
+      </div>
+      <div class="sol-tags"><span class="sol-tag">EN 13432</span><span class="sol-tag">BPI</span><span class="sol-tag">OK Compost</span><span class="sol-tag">SUPD Ready</span></div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-sector">Retail & Supermarket</div>
+      <div class="sol-title">零售与超市<br>包装方案</div>
+      <div class="sol-desc">超市、生鲜店、便利店——用可堆肥与纸塑替代传统一次性塑料，支持自有品牌与定制印刷，满足零售商可持续采购条款。</div>
+      <div class="sol-items">
+        <div class="sol-item">Shopping bags（购物袋）</div>
+        <div class="sol-item">Produce rolls & bags（果蔬卷袋）</div>
+        <div class="sol-item">Trays & containers（托盘与熟食盒）</div>
+        <div class="sol-item">Custom OEM printing（定制品牌印刷）</div>
+      </div>
+      <div class="sol-tags"><span class="sol-tag">EN 13432</span><span class="sol-tag">ASTM D6400</span><span class="sol-tag">AS 4736</span><span class="sol-tag">OEM</span></div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-sector">E-commerce & Mailer</div>
+      <div class="sol-title">电商与快递<br>包装方案</div>
+      <div class="sol-desc">跨境电商、品牌官网、3PL 物流——替代传统塑料快递袋，满足欧美电商品牌的环保承诺与买方合规要求，可印刷 Green Claims 合规文案。</div>
+      <div class="sol-items">
+        <div class="sol-item">Compostable mailers（可堆肥邮袋）</div>
+        <div class="sol-item">Shipping bags（快递袋）</div>
+        <div class="sol-item">Inner packaging（内包袋 · 缓冲内衬）</div>
+        <div class="sol-item">Brand printing & compliance labeling（品牌印刷与合规标识）</div>
+      </div>
+      <div class="sol-tags"><span class="sol-tag">EN 13432</span><span class="sol-tag">BPI</span><span class="sol-tag">Green Claims</span><span class="sol-tag">双市场</span></div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-sector">Organic Waste & Composting</div>
+      <div class="sol-title">厨余垃圾与<br>堆肥系统方案</div>
+      <div class="sol-desc">城市厨余垃圾收集、餐厨垃圾处理、社区堆肥——适配欧洲和部分北美城市的有机垃圾分类体系，与 EN 13432 / BPI 标准对齐设计。</div>
+      <div class="sol-items">
+        <div class="sol-item">Compostable trash bags（可堆肥垃圾袋）</div>
+        <div class="sol-item">Biowaste collection bags（生物垃圾专用袋）</div>
+        <div class="sol-item">Customized sizing for municipal programs（城市垃圾分类定制规格）</div>
+      </div>
+      <div class="sol-tags"><span class="sol-tag">EN 13432</span><span class="sol-tag">OK Compost Home</span><span class="sol-tag">BPI</span><span class="sol-tag">市政项目</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARKETS ── -->
+<section class="markets" id="markets">
+  <div class="markets-inner">
+    <div class="markets-left">
+      <div class="sec-tag">By Region / 按地区</div>
+      <h2 class="sec-h">先确认<br>你的市场。</h2>
+      <p>Different regions have different plastic bans and compostability requirements. 不同地区的禁塑与可堆肥标准不同，我们为每个目标市场设计相应的包装组合。</p>
+    </div>
+    <div class="market-cards">
+      <div class="market-card">
+        <div class="mc-flag">🇪🇺</div>
+        <div class="mc-region">Europe (EU & UK)</div>
+        <div class="mc-cert">EN 13432 · OK Compost · SUPD</div>
+        <div class="mc-desc">EU Single-Use Plastics Directive（一次性塑料指令）全面实施。进入欧盟市场须持有 EN 13432 认证，部分国家另要求家庭堆肥认证。</div>
+        <div class="mc-recs">
+          <div class="mc-rec">SUPD-ready molded fiber tableware set</div>
+          <div class="mc-rec">EN 13432 compostable bags for biowaste & retail</div>
+          <div class="mc-rec">Green Claims compliant mailers for e-commerce</div>
+        </div>
+        <div class="mc-tags"><span class="mc-tag">德国</span><span class="mc-tag">法国</span><span class="mc-tag">荷兰</span><span class="mc-tag">北欧</span><span class="mc-tag">意大利</span><span class="mc-tag">英国</span></div>
+      </div>
+      <div class="market-card">
+        <div class="mc-flag">🇺🇸</div>
+        <div class="mc-region">North America (US & Canada)</div>
+        <div class="mc-cert">ASTM D6400 · BPI · 州级法规</div>
+        <div class="mc-desc">美国各州法规差异较大，加州 SB 1383 要求有机废物分流，BPI 认证是零售买手最常见的采购要求。</div>
+        <div class="mc-recs">
+          <div class="mc-rec">BPI certified compostable foodservice kit</div>
+          <div class="mc-rec">Compostable mailers & bags for e-commerce brands</div>
+          <div class="mc-rec">Biowaste bags for municipal composting programs</div>
+        </div>
+        <div class="mc-tags"><span class="mc-tag">加州</span><span class="mc-tag">纽约</span><span class="mc-tag">华盛顿</span><span class="mc-tag">加拿大</span></div>
+      </div>
+      <div class="market-card">
+        <div class="mc-flag">🌏</div>
+        <div class="mc-region">Australia & New Zealand</div>
+        <div class="mc-cert">AS 4736 · AS 5810 · 2025 目标</div>
+        <div class="mc-desc">澳洲 2025 包装目标推进中，分工业堆肥（AS 4736）与家庭堆肥（AS 5810）两类标准。各州禁塑节奏不一。</div>
+        <div class="mc-recs">
+          <div class="mc-rec">Supermarket compostable produce & shopping bags</div>
+          <div class="mc-rec">Foodservice compostable sets for cafes & restaurants</div>
+          <div class="mc-rec">Supermarket meat/seafood trays with AS 4736</div>
+        </div>
+        <div class="mc-tags"><span class="mc-tag">澳大利亚</span><span class="mc-tag">新西兰</span><span class="mc-tag">各州法规</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTS ── -->
+<section class="certs-section" id="certs">
+  <div class="sec-tag">Certifications & Compliance / 认证与法规</div>
+  <h2 class="sec-h">以标准说话，<br>证书可查验。</h2>
+  <div class="certs-inner">
+    <div>
+      <p class="sec-sub" style="margin-bottom:2rem;">Certifications prove that your packaging truly meets compostability and legal requirements. 认证是证明包装真正符合可堆肥与法律要求的关键。</p>
+      <div class="cert-grid">
+        <div class="cert-item"><div class="cert-code">EN 13432</div><div class="cert-region">欧盟 · 工业堆肥</div><div class="cert-desc">12周内生物降解率≥90%，重金属及有害物质合规，适用欧盟全境及英国市场</div></div>
+        <div class="cert-item"><div class="cert-code">ASTM D6400</div><div class="cert-region">北美 · 工业堆肥</div><div class="cert-desc">180天完全降解，BPI 认证，适用美国及加拿大零售与食品服务要求</div></div>
+        <div class="cert-item"><div class="cert-code">OK Compost</div><div class="cert-region">TÜV Austria · 工业 + 家庭</div><div class="cert-desc">工业堆肥 + 家庭堆肥双认证，全球最广认可的第三方认证机构</div></div>
+        <div class="cert-item"><div class="cert-code">AS 4736</div><div class="cert-region">澳洲 · 工业堆肥</div><div class="cert-desc">澳大利亚工业堆肥标准，适配商超零售与餐饮合规要求</div></div>
+      </div>
+      <div class="data-strip">
+        <div class="data-item"><div class="data-n">90天</div><div class="data-l">堆肥降解周期</div></div>
+        <div class="data-item"><div class="data-n">68%</div><div class="data-l">碳排放降幅</div></div>
+        <div class="data-item"><div class="data-n">100%</div><div class="data-l">植物基原料</div></div>
+      </div>
+      <div class="cert-verify">
+        <div class="cv-title">证书能查到吗？可以，以下是官方核查入口。</div>
+        <div class="cv-desc">每张认证证书均由独立第三方机构颁发，附有可在官方数据库核查的证书编号。你可以直接输入我们的证书编号进行核实。</div>
+        <div class="cv-links">
+          <div class="cv-link"><div><div class="cv-link-cert">OK Compost / TÜV Austria</div><div class="cv-link-body">tuv-at.com → 证书数据库 → 输入证书编号</div></div><div class="cv-arrow">↗</div></div>
+          <div class="cv-link"><div><div class="cv-link-cert">EN 13432 / DIN CERTCO</div><div class="cv-link-body">dincertco.de → 证书查询 → 按编号或公司名搜索</div></div><div class="cv-arrow">↗</div></div>
+          <div class="cv-link"><div><div class="cv-link-cert">BPI / ASTM D6400（北美）</div><div class="cv-link-body">bpiworld.org → Certified Products → 搜索产品或品牌名</div></div><div class="cv-arrow">↗</div></div>
+        </div>
+        <div class="cv-note">如需具体证书编号，请在询价表单中注明，我们在回复中一并附上。</div>
+      </div>
+    </div>
+    <div class="std-right">
+      <div class="std-block">
+        <div class="std-block-title">Standards Explained — 可降解 vs 可堆肥，区别在哪？</div>
+        <div class="std-rows">
+          <div class="std-row"><div class="std-row-k">可降解（Degradable）</div><div class="std-row-v">在环境中碎裂，但不一定完全分解为无害物质，可能留下微塑料，无法通过工业认证。</div></div>
+          <div class="std-row"><div class="std-row-k">可生物降解（Biodegradable）</div><div class="std-row-v">在特定条件下被微生物分解，但无法确保在堆肥设施中达到标准，不等同于"可堆肥"。</div></div>
+          <div class="std-row"><div class="std-row-k">可工业堆肥（Industrially Compostable）</div><div class="std-row-v">在工业堆肥设施（高温 58°C）中，12 周内降解率≥90%，残留重金属合规，是 EN 13432 / ASTM D6400 的核心要求。</div></div>
+          <div class="std-row"><div class="std-row-k">可家庭堆肥（Home Compostable）</div><div class="std-row-v">在常温家庭堆肥环境下也能完全分解，要求更严苛，对应 OK Compost Home 和 AS 5810 标准。</div></div>
+        </div>
+      </div>
+      <div class="std-block">
+        <div class="std-block-title">Compliance by Region — 按地区合规简表</div>
+        <div class="std-rows">
+          <div class="std-row"><div class="std-row-k">EU / 欧盟</div><div class="std-row-v">SUPD 指令 + EN 13432，部分国家要求 OK Compost Home。推荐：纸浆模塑餐具 + 可堆肥袋全系列。</div></div>
+          <div class="std-row"><div class="std-row-k">US / 美国</div><div class="std-row-v">BPI 认证 + ASTM D6400，加州 SB 1383 要求有机垃圾分流。推荐：BPI 餐饮套装 + 可堆肥邮袋。</div></div>
+          <div class="std-row"><div class="std-row-k">AU / 澳洲</div><div class="std-row-v">AS 4736（工业）+ AS 5810（家庭），2025 包装目标持续推进。推荐：超市购物袋 + 餐饮堆肥套装。</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CASES ── -->
+<section class="cases" id="cases">
+  <div class="sec-tag">Client Cases / 客户案例</div>
+  <h2 class="sec-h">不同客户，<br>我们怎么做。</h2>
+  <p class="sec-sub">每个客户的起点不同，问题不同，我们的应对方式也不同。以下是三个真实协作过程的还原。</p>
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="case-left">
+        <div><div class="case-client-tag">案例 A · Molded Fiber</div><div class="case-client">自有护肤品牌<br>礼盒内衬定制</div><div class="case-cat">电商 · 高端护肤 · 进入欧洲市场</div></div>
+        <span class="case-badge">纸浆模具</span>
+      </div>
+      <div class="case-right">
+        <div class="case-sl">客户的起点</div>
+        <div class="case-quote">"我有产品，有 AI 出的平面设计图，但完全不懂 3D 效果图和开模流程。我只知道我想要一个高级感的哑光内衬，能把三瓶精华放进去，进法国市场用。"</div>
+        <div class="case-sl" style="margin-bottom:0.55rem;">我们的过程</div>
+        <div class="case-steps">
+          <div class="case-step"><div class="case-step-n">1</div><div class="case-step-t">根据产品尺寸和参考图，我们用 <strong>3D 建模出两套卡位方案</strong>，客户选方向，无需自己准备图纸。</div></div>
+          <div class="case-step"><div class="case-step-n">2</div><div class="case-step-t"><strong>7 天完成实物打样</strong>，附哑光和原色两种表面处理对比，供客户判断质感。</div></div>
+          <div class="case-step"><div class="case-step-n">3</div><div class="case-step-t">同步提供 <strong>EN 13432 认证文件</strong>，用于法国零售商的可持续采购审核，一次通过。</div></div>
+          <div class="case-step"><div class="case-step-n">4</div><div class="case-step-t">首批量产 <strong>1,000 套，21 天交付</strong>，认证报告随货，用于官网环保声明披露。</div></div>
+        </div>
+        <div class="case-results"><span class="case-r">零图纸起步</span><span class="case-r">EN 13432 通过法国审核</span><span class="case-r">打样 7 天</span><span class="case-r">量产 21 天</span></div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-left">
+        <div><div class="case-client-tag">案例 B · Compostable Bags</div><div class="case-client">某服装品牌<br>全新环保形象袋</div><div class="case-cat">服装零售 · 品牌升级 · 北美 + 欧盟</div></div>
+        <span class="case-badge">可堆肥包装袋</span>
+      </div>
+      <div class="case-right">
+        <div class="case-sl">客户的起点</div>
+        <div class="case-quote">"我们要做品牌形象升级，希望新的包装袋印上品牌 LOGO 和一句环保宣传语，同时能证明这个袋子真的可堆肥，不是在做 greenwashing。我们要同时进北美和欧盟市场。"</div>
+        <div class="case-sl" style="margin-bottom:0.55rem;">我们的过程</div>
+        <div class="case-steps">
+          <div class="case-step"><div class="case-step-n">1</div><div class="case-step-t">客户提供 LOGO 和品牌色，我们出 <strong>3 款印刷排版方案</strong>，含认证 logo 合规格式（不得随意缩小或变形）。</div></div>
+          <div class="case-step"><div class="case-step-n">2</div><div class="case-step-t"><strong>5 天打样</strong>，同步提供 ASTM D6400（北美）和 EN 13432（欧盟）<strong>两套认证文件</strong>，满足双市场要求。</div></div>
+          <div class="case-step"><div class="case-step-n">3</div><div class="case-step-t">协助客户起草官网 <strong>Green Claims 合规声明文案</strong>，确保符合欧盟指令，避免被认定为误导性宣传。</div></div>
+          <div class="case-step"><div class="case-step-n">4</div><div class="case-step-t">量产 <strong>10,000 件，18 天交付</strong>，附两份市场认证副本，分发北美和欧洲仓库。</div></div>
+        </div>
+        <div class="case-results"><span class="case-r">双市场认证一次搞定</span><span class="case-r">Green Claims 合规</span><span class="case-r">打样 5 天</span><span class="case-r">10,000 件 18 天</span></div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-left">
+        <div><div class="case-client-tag">案例 C · Compostable Trays</div><div class="case-client">某大型商超<br>牛扒定制包装盒</div><div class="case-cat">商超零售 · 生鲜包装 · 澳洲市场</div></div>
+        <span class="case-badge">可堆肥餐盒 / 托盘</span>
+      </div>
+      <div class="case-right">
+        <div class="case-sl">客户的起点</div>
+        <div class="case-quote">"我们需要一款用于牛扒零售的可堆肥包装盒。要求防油防水、能在零下 18°C 冷冻储存、上架后耐常温展示至少 5 天不变形。同时必须通过澳洲 AS 4736 认证，因为我们门店承诺零塑料包装。"</div>
+        <div class="case-sl" style="margin-bottom:0.55rem;">我们的过程</div>
+        <div class="case-steps">
+          <div class="case-step"><div class="case-step-n">1</div><div class="case-step-t">针对冷冻 + 防油防水双重要求，推荐<strong>竹纤维复合配方 + 植物蜡涂层</strong>，取代传统 PE 涂层，确保可堆肥性不受影响。</div></div>
+          <div class="case-step"><div class="case-step-n">2</div><div class="case-step-t">打样阶段进行 <strong>冷冻 72 小时 + 解冻 5 天常温展示</strong> 压力测试，确认不变形、无渗漏后提交测试报告。</div></div>
+          <div class="case-step"><div class="case-step-n">3</div><div class="case-step-t">提供 <strong>AS 4736 认证文件</strong>及第三方检测报告，支持商超向澳洲监管机构提交零塑料承诺合规证明。</div></div>
+          <div class="case-step"><div class="case-step-n">4</div><div class="case-step-t">量产 <strong>50,000 只，28 天交付</strong>，附完整质检报告和认证副本，直接用于上架销售和对外环保公告。</div></div>
+        </div>
+        <div class="case-results"><span class="case-r">防油防水 + 可冷冻</span><span class="case-r">AS 4736 澳洲认证</span><span class="case-r">植物蜡涂层无 PE</span><span class="case-r">50,000 只 28 天</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section class="process" id="process">
+  <div class="sec-tag">How We Work / 合作流程</div>
+  <h2 class="sec-h">从想法到交付，<br>每一步都透明。</h2>
+  <p class="sec-sub">我们知道找新供应商最大的风险是信息不透明。所以我们把每个节点、每个时间、每个我们承担的责任，都写出来。</p>
+  <div class="process-steps">
+    <div class="step"><div class="step-num">01</div><div class="step-title">需求问诊</div><div class="step-desc">告诉我们你的产品、目标市场、品牌感觉。出初步合规建议和产品推荐，不需要准备任何文件。</div><span class="step-time">24 小时内回复</span></div>
+    <div class="step"><div class="step-num">02</div><div class="step-title">方案报价</div><div class="step-desc">确认产品方向后，提供阶梯报价对比表，清楚列出不同数量下的单价和总成本，帮你做决策。</div><span class="step-time">48 小时内出报价</span></div>
+    <div class="step"><div class="step-num">03</div><div class="step-title">免费打样</div><div class="step-desc">打样免费，运费到付。收到实物后确认材质、尺寸和印刷效果，满意再进入量产，不满意再改。</div><span class="step-time">打样 5–7 天</span></div>
+    <div class="step"><div class="step-num">04</div><div class="step-title">量产交付</div><div class="step-desc">量产期间提供生产节点更新，出货前附质检报告和认证文件副本，支持买方或监管机构审核。</div><span class="step-time">量产 18–28 天</span></div>
+    <div class="step"><div class="step-num">05</div><div class="step-title">售后支持</div><div class="step-desc">收货后如有质量问题，承担补货或退款责任，不推诿。认证文件如需更新版本，免费提供。</div><span class="step-time">终身文件支持</span></div>
+  </div>
+</section>
+
+<!-- ── DESIGN / CONTACT ── -->
+<section class="design" id="contact">
+  <div class="design-left">
+    <div class="sec-tag">Custom Design & RFQ / 设计支持与询价</div>
+    <h2 class="sec-h">不懂设计？<br>告诉我们感觉<br>就够了。</h2>
+    <p class="design-intro">绝大多数客户在找到我们时，没有完整的设计图，只有一个模糊的想法。这完全没问题——我们的工作，就是把你的想法变成你可以确认的方案。</p>
+    <div class="design-feats">
+      <div class="design-feat"><div class="df-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" fill="#566B38"/><path d="M4 7 L6 9 L10 5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="df-title">无需提供图纸</div><div class="df-desc">描述产品尺寸与品牌风格，我们出初稿，你确认方向。</div></div></div>
+      <div class="design-feat"><div class="df-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" fill="#566B38"/><path d="M4 7 L6 9 L10 5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="df-title">最多 3 轮修改</div><div class="df-desc">打样前可修改设计直到满意，不额外收费。</div></div></div>
+      <div class="design-feat"><div class="df-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" fill="#566B38"/><path d="M4 7 L6 9 L10 5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="df-title">认证同步规划</div><div class="df-desc">设计阶段同步确认目标市场认证，避免做完才发现不合规。</div></div></div>
+      <div class="design-feat"><div class="df-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" fill="#566B38"/><path d="M4 7 L6 9 L10 5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="df-title">整合多家认证工厂</div><div class="df-desc">纸塑模具 · 餐具 · PLA/PBAT 袋，一张方案表对接全部需求。</div></div></div>
+    </div>
+  </div>
+  <div class="design-right">
+    <div class="form-label">RFQ / 询盘表单 — 48小时内回复</div>
+    <div class="form">
+      <div class="f-row">
+        <div class="f-field"><label>Name / 姓名</label><input type="text" placeholder="Your name"></div>
+        <div class="f-field"><label>Company / 公司</label><input type="text" placeholder="Company name"></div>
+      </div>
+      <div class="f-row">
+        <div class="f-field"><label>Email / 邮箱</label><input type="email" placeholder="business@company.com"></div>
+        <div class="f-field"><label>Country / 国家地区</label><input type="text" placeholder="e.g. Germany, USA, Australia"></div>
+      </div>
+      <div class="f-row">
+        <div class="f-field"><label>Target Market / 目标市场</label>
+          <select><option value="">Select...</option><option>Europe / 欧盟</option><option>North America / 北美</option><option>Australia & NZ / 澳洲</option><option>UK / 英国</option><option>Other</option></select>
+        </div>
+        <div class="f-field"><label>Application / 应用场景</label>
+          <select><option value="">Select...</option><option>Foodservice / 餐饮外卖</option><option>Retail / 零售超市</option><option>E-commerce / 电商</option><option>Waste Management / 垃圾收集</option><option>Other</option></select>
+        </div>
+      </div>
+      <div class="f-field"><label>Product Interest / 感兴趣产品</label>
+        <select><option value="">Select...</option><option>Molded Fiber Tableware / 纸浆模塑餐具</option><option>Compostable Cutlery & Straws / 餐具吸管</option><option>Bags & Mailers / 包装袋邮袋</option><option>Cups & Containers / 杯子容器</option><option>Custom OEM / 定制贴牌</option><option>Full Solution / 全系列方案</option></select>
+      </div>
+      <div class="f-field"><label>Annual Volume / 年采购量</label>
+        <select><option value="">Select...</option><option>&lt; 10,000 件</option><option>10,000 – 50,000 件</option><option>50,000 – 200,000 件</option><option>&gt; 200,000 件</option></select>
+      </div>
+      <div class="f-field"><label>Requirement Type / 需求类型</label>
+        <div class="f-radio-group">
+          <label class="f-radio"><input type="radio" name="req" value="full"> I need a full solution (one-stop) / 我需要完整一站式方案</label>
+          <label class="f-radio"><input type="radio" name="req" value="product"> I only need certain products / 我只需要特定产品</label>
+        </div>
+      </div>
+      <div class="f-field"><label>Message / 需求说明</label><textarea placeholder="请简述你的场景、产品和想法，或者直接告诉我们你遇到的问题…"></textarea></div>
+      <button class="f-submit">Submit RFQ / 发送询价 →</button>
+      <div class="f-note">打样免费 · 运费到付 · 48小时内回复</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-left">
+      <div class="sec-tag">About Us / 关于我们</div>
+      <h2 class="sec-h">我们是解决方案<br>整合者。</h2>
+      <div class="about-body">
+        <p>We are a solution integrator, connecting certified factories in Asia with brands and distributors in Europe, North America and Australia.</p>
+        <p>我们连接亚洲的认证工厂与欧美澳的品牌与分销商。我们不是单一工厂，而是整合了纸塑模具、餐具、PLA/PBAT 袋三条产品线的多工厂供应体系——用一张方案表，对接客户的全部需求。</p>
+        <p>我们的核心价值不是最低价，而是帮助客户在正确的时间，用正确的产品，通过正确市场的认证。</p>
+      </div>
+      <div class="about-vals">
+        <div class="av-row"><span class="av-num">01</span><div><div class="av-title">产品组合设计</div><div class="av-sub">根据行业和地区需求，设计完整的包装组合方案</div></div></div>
+        <div class="av-row"><span class="av-num">02</span><div><div class="av-title">工厂与供应链整合</div><div class="av-sub">整合多家认证工厂，一张订单对接纸塑 · 餐具 · 袋类</div></div></div>
+        <div class="av-row"><span class="av-num">03</span><div><div class="av-title">认证与合规支持</div><div class="av-sub">EN 13432 · BPI · OK Compost · AS 4736，多市场认证文件管理</div></div></div>
+        <div class="av-row"><span class="av-num">04</span><div><div class="av-title">包装设计与 OEM</div><div class="av-sub">从草图到打样，设计协作全程支持，无需客户准备图纸</div></div></div>
+      </div>
+    </div>
+    <div class="about-right">
+      <div class="about-pillar"><div class="ap-title">Sustainability & Values / 可持续理念</div><div class="ap-desc">减塑、减碳、支持循环经济。我们帮助客户从传统塑料平滑过渡到绿色包装，每一张认证文件背后，是真实通过第三方测试的产品，不是 greenwashing。</div></div>
+      <div class="about-pillar"><div class="ap-title">Our Partner Factories / 合作工厂</div><div class="ap-desc">我们整合了三类工厂：纸塑模具工厂（纸浆餐盒 · 内衬 · 托盘）、餐具工厂（PLA/CPLA · 竹纤维）、PLA/PBAT 可堆肥袋工厂（购物袋 · 邮袋 · 垃圾袋）。多工厂 · 多产品 · 一个联系人对接。</div></div>
+      <div class="about-pillar"><div class="ap-title">Flexible OEM / ODM</div><div class="ap-desc">整合多家认证工厂，提供完整 OEM/ODM 服务。形状定制、品牌印刷、区域合规认证规划，支持从小批量打样到大规模量产的全周期合作。</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESOURCES ── -->
+<section class="resources" id="resources">
+  <div class="sec-tag">Resources / 资料与博客</div>
+  <h2 class="sec-h">帮你了解市场，<br>不只是卖产品。</h2>
+  <div class="resources-inner">
+    <div>
+      <p style="font-size:0.82rem;color:var(--hint);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem;">Articles / 博客文章</p>
+      <div class="articles-grid">
+        <div class="article-item"><div><div class="art-tag">EU Regulation</div><div class="art-title">EU SUP Directive: What Foodservice Brands Need to Know</div></div><div class="art-arrow">→</div></div>
+        <div class="article-item"><div><div class="art-tag">North America</div><div class="art-title">Why BPI Certification Matters for US Food Packaging</div></div><div class="art-arrow">→</div></div>
+        <div class="article-item"><div><div class="art-tag">Australia</div><div class="art-title">Australia's 2025 Plastic Packaging Targets: How to Prepare</div></div><div class="art-arrow">→</div></div>
+        <div class="article-item"><div><div class="art-tag">Compliance</div><div class="art-title">可降解 vs 可堆肥：采购前你必须知道的区别</div></div><div class="art-arrow">→</div></div>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.82rem;color:var(--hint);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.2rem;">Download Center / 资料下载</p>
+      <div class="downloads-grid">
+        <div class="dl-item">
+          <div style="display:flex;align-items:center;gap:0.9rem;">
+            <div class="dl-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="10" height="13" rx="1.5" fill="#7E9A5A"/><path d="M9 1 L12 4 L9 4 Z" fill="#566B38"/><rect x="4" y="7" width="6" height="1" rx="0.5" fill="#fff" opacity="0.7"/><rect x="4" y="9.5" width="4" height="1" rx="0.5" fill="#fff" opacity="0.5"/></svg></div>
+            <div><div class="dl-name">Product Catalogue / 产品型录</div><div class="dl-desc">全系列产品规格总览 PDF</div></div>
+          </div>
+          <div class="dl-btn">下载</div>
+        </div>
+        <div class="dl-item">
+          <div style="display:flex;align-items:center;gap:0.9rem;">
+            <div class="dl-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="10" height="13" rx="1.5" fill="#7E9A5A"/><path d="M9 1 L12 4 L9 4 Z" fill="#566B38"/><rect x="4" y="7" width="6" height="1" rx="0.5" fill="#fff" opacity="0.7"/><rect x="4" y="9.5" width="4" height="1" rx="0.5" fill="#fff" opacity="0.5"/></svg></div>
+            <div><div class="dl-name">Datasheet / 产品规格书</div><div class="dl-desc">材质 · 尺寸 · 性能参数</div></div>
+          </div>
+          <div class="dl-btn">下载</div>
+        </div>
+        <div class="dl-item">
+          <div style="display:flex;align-items:center;gap:0.9rem;">
+            <div class="dl-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="10" height="13" rx="1.5" fill="#7E9A5A"/><path d="M9 1 L12 4 L9 4 Z" fill="#566B38"/><rect x="4" y="7" width="6" height="1" rx="0.5" fill="#fff" opacity="0.7"/><rect x="4" y="9.5" width="4" height="1" rx="0.5" fill="#fff" opacity="0.5"/></svg></div>
+            <div><div class="dl-name">Certification Copies / 认证文件</div><div class="dl-desc">EN 13432 · BPI · OK Compost（水印版）</div></div>
+          </div>
+          <div class="dl-btn">申请</div>
+        </div>
+        <div class="dl-item">
+          <div style="display:flex;align-items:center;gap:0.9rem;">
+            <div class="dl-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="1" width="10" height="13" rx="1.5" fill="#7E9A5A"/><path d="M9 1 L12 4 L9 4 Z" fill="#566B38"/><rect x="4" y="7" width="6" height="1" rx="0.5" fill="#fff" opacity="0.7"/><rect x="4" y="9.5" width="4" height="1" rx="0.5" fill="#fff" opacity="0.5"/></svg></div>
+            <div><div class="dl-name">Compliance Guide / 合规指南</div><div class="dl-desc">EU · US · AU 三地法规要点速查</div></div>
+          </div>
+          <div class="dl-btn">下载</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta">
+  <div class="cta-left">
+    <div class="sec-tag">Contact / 开始合作</div>
+    <h2 class="cta-h">不确定从哪里<br>开始？我们来问你。</h2>
+    <p class="cta-sub">你不需要准备完整的需求文档，也不需要懂认证或设计。告诉我们你现在面对的问题，我们帮你理清下一步。</p>
+  </div>
+  <div class="cta-opts">
+    <div class="cta-opt" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><div><div class="cta-opt-label">提交 RFQ，获取免费方案建议</div><div class="cta-opt-desc">填写询价表单，48小时内我们回复</div></div><div class="cta-arrow">→</div></div>
+    <div class="cta-opt" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"><div><div class="cta-opt-label">申请免费打样套装</div><div class="cta-opt-desc">三款核心产品实物样品，运费到付</div></div><div class="cta-arrow">→</div></div>
+    <div class="cta-opt" onclick="document.getElementById('markets').scrollIntoView({behavior:'smooth'})"><div><div class="cta-opt-label">查看我的目标市场认证要求</div><div class="cta-opt-desc">EU · North America · Australia & NZ</div></div><div class="cta-arrow">→</div></div>
+    <div class="cta-opt" onclick="document.getElementById('resources').scrollIntoView({behavior:'smooth'})"><div><div class="cta-opt-label">下载认证文件与合规资料</div><div class="cta-opt-desc">EN 13432 · ASTM D6400 · OK Compost</div></div><div class="cta-arrow">→</div></div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="logo-wrap">
+    <span class="logo-main">Kashwah</span>
+    <span class="logo-sub">Eco Packaging</span>
+  </div>
+  <div class="footer-mid">
+    <a href="#products">Products</a>
+    <a href="#solutions">Solutions</a>
+    <a href="#markets">By Region</a>
+    <a href="#certs">Certifications</a>
+    <a href="#cases">Cases</a>
+    <a href="#about">About</a>
+    <a href="#resources">Resources</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-right">© 2026 Kashwah Eco Packaging</div>
+</footer>
+
+<script>
+  function setMarket(btn){
+    document.querySelectorAll('.mkt-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
